@@ -25,4 +25,4 @@ jobs:
       - name: Run Test without Nondex
         run: mvn test-compile -pl . test -Dit.test=com.google.cloud.teleport.bigtable.CassandraKeyUtilsTest.testComplexPrimaryKeyOrder,ID,,,
       - name: Run Test with Nondex Proving it is Flaky
-        run: mvn test-compile -pl . edu.illinois:nondex-maven-plugin:1.1.2:nondex -DnondexRuns=10 -Dit.test=com.google.cloud.teleport.bigtable.CassandraKeyUtilsTest.testComplexPrimaryKeyOrder,ID,,,
+        run: mvn test-compile -pl . edu.illinois:nondex-maven-plugin:1.1.2:nondex -DnondexRuns=100 -Dit.test=com.google.cloud.teleport.bigtable.CassandraKeyUtilsTest.testComplexPrimaryKeyOrder,ID,,,
