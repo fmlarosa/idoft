@@ -1,8 +1,8 @@
 <project>
   <modelVersion>4.0.0</modelVersion>
   
-  <groupId>flaky.test</groupId>
-  <artifactId>flaky-test</artifactId>
+  <groupId>idoft</groupId>
+  <artifactId>idoft</artifactId>
   <version>1</version>
   
           <build>
