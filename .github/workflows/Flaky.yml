@@ -20,9 +20,8 @@ jobs:
           distribution: 'adopt'
       - name: Run the Maven verify phase
         run: mvn --batch-mode --update-snapshots verify
-      - name: Compile
-        run: mvn test-compile -pl . -am
+      
       - name: Run Test without Nondex
-        run: mvn test-compile -pl . test -Dit.test=com.google.cloud.teleport.bigtable.CassandraKeyUtilsTest.testComplexPrimaryKeyOrder,ID,,,
+        run: mvn test-compile test -Dit.test=com.google.cloud.teleport.bigtable.CassandraKeyUtilsTest.testComplexPrimaryKeyOrder,ID,,,
       - name: Run Test with Nondex Proving it is Flaky
-        run: mvn test-compile -pl . edu.illinois:nondex-maven-plugin:1.1.2:nondex -Dit.test=com.google.cloud.teleport.bigtable.CassandraKeyUtilsTest.testComplexPrimaryKeyOrder,ID,,,
+        run: mvn test-compile edu.illinois:nondex-maven-plugin:1.1.2:nondex -Dit.test=com.google.cloud.teleport.bigtable.CassandraKeyUtilsTest.testComplexPrimaryKeyOrder,ID,,,
