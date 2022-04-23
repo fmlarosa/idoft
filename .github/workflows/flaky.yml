@@ -1,0 +1,20 @@
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+
+      - name: Set up JDK 1.8
+        uses: actions/setup-java@v2
+        with:
+          java-version: '8'
+          distribution: 'adopt'
+      - name: Compile
+        run: mvn test-compile -pl . -am
+      - name: Run Test without Nondex
+        run: mvn test-compile -pl . test -Dtest=com.google.cloud.teleport.bigtable.CassandraKeyUtilsTest#testComplexPrimaryKeyOrder,ID,,,
+      - name: Run Test with Nondex: Proving it is Flaky
+        run: mvn test-compile -pl . edu.illinois:nondex-maven-plugin:1.1.2:nondex -Dtest=com.google.cloud.teleport.bigtable.CassandraKeyUtilsTest#testComplexPrimaryKeyOrder,ID,,,
