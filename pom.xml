@@ -1,6 +1,10 @@
 <project>
   <modelVersion>4.0.0</modelVersion>
- 
+  
+  <groupId>flaky test</groupId>
+  <artifactId>flaky-test</artifactId>
+  <version>1</version>
+  
   <repositories>
     <repository>
       <id>central</id>
